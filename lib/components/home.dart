@@ -14,12 +14,14 @@ class Home extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              color: Colors.red,
+              width: double.infinity,
+              color: Colors.blue,
               child: const Text("Aqui será a HOME"),
             ),
           ),
           Expanded(
             child: Container(
+              width: double.infinity,
               color: Colors.amber,
               child: const Text("Aqui será a LISTA"),
             ),
