@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Classes
+import 'package:app_beer/components/home.dart';
+
 class MyApp extends StatelessWidget {
   final List<Map<String, dynamic>> cervejas;
   final List<String> categorias;
@@ -35,6 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      home: Home(cervejas: cervejas, categorias: categorias),
     );
   }
 }

@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'components/MyApp.dart';
+import 'components/my_app.dart';
 
 void main() {
   List<Map<String, dynamic>> cervejas = [
