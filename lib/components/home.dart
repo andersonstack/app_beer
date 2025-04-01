@@ -7,6 +7,25 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.red),
+      drawer: Drawer(),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              child: const Text("Aqui será a HOME"),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.amber,
+              child: const Text("Aqui será a LISTA"),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
