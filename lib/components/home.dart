@@ -20,9 +20,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ImageController());
-    controller.init(screenWidth, screenHeight);
-    controller.animate();
+    ImageController.to.init(screenWidth, screenHeight);
+    ImageController.to.animate();
 
     return Scaffold(
       appBar: AppBar(backgroundColor: Theme.of(context).colorScheme.surface),
@@ -33,27 +32,28 @@ class HomeView extends StatelessWidget {
           color: Theme.of(context).colorScheme.surfaceContainer,
           child: Column(
             children: [
-              Obx(
-                () => Positioned(
-                  top: controller.topPosition.value,
-                  left:
-                      MediaQuery.of(context).size.width / 2 -
-                      controller.imageSize.value / 2,
-                  child: AnimatedOpacity(
-                    opacity: controller.opacity.value,
-                    duration: Duration(seconds: 2),
-                    child: AnimatedContainer(
-                      duration: Duration(seconds: 2),
-                      width: controller.imageSize.value,
-                      height: controller.imageSize.value,
-                      child: Image.asset(
-                        "assets/beer.png",
-                        width: controller.imageSize.value,
-                        height: controller.imageSize.value,
+              GetX<ImageController>(
+                builder:
+                    (controller) => Positioned(
+                      top: controller.topPosition.value,
+                      left:
+                          MediaQuery.of(context).size.width / 2 -
+                          controller.imageSize.value / 2,
+                      child: AnimatedOpacity(
+                        opacity: controller.opacity.value,
+                        duration: Duration(seconds: 2),
+                        child: AnimatedContainer(
+                          duration: Duration(seconds: 2),
+                          width: controller.imageSize.value,
+                          height: controller.imageSize.value,
+                          child: Image.asset(
+                            "assets/beer.png",
+                            width: controller.imageSize.value,
+                            height: controller.imageSize.value,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
               ),
               Text(
                 "Descubra, avalie e registre suas cervejas favoritas em um só lugar! ",

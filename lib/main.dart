@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
+import 'package:get/get.dart';
 import 'components/my_app.dart';
+import 'controller/image_controller.dart';
 
 void main() {
   List<Map<String, dynamic>> cervejas = [
@@ -18,7 +20,7 @@ void main() {
     {"name": "Corona", "style": "Lager", "ibu": "50"},
   ];
   List<String> categorias = ["name", "style", "ibu"];
-
+  Get.put(ImageController());
   MyApp app = MyApp(cervejas: cervejas, categorias: categorias);
 
   runApp(app);
