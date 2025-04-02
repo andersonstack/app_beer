@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/image_controller.dart';
+import './button.dart';
 
 class HomeView extends StatelessWidget {
   final List<Map<String, dynamic>> cervejas;
@@ -48,12 +49,11 @@ class HomeView extends StatelessWidget {
               "Descubra, avalie e registre suas cervejas favoritas em um só lugar!",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            TextButton(
-              onPressed: () => {},
-              child: Text(
-                "Visualizar cervejas",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
+            BotaoView(
+              title: "Visualizar cervejas",
+              // ignore: avoid_print
+              onPress: () => print("fui clicado"),
+              icon: "click",
             ),
           ],
         ),

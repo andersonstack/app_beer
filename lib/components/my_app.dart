@@ -43,6 +43,18 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.normal,
           ),
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFFF2A20C),
+            foregroundColor: Colors.white,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: Color(0xFFFFFFFF),
+            backgroundColor: Color(0xFFF2A20C),
+          ),
+        ),
       ),
       home: HomeView(
         cervejas: cervejas,
