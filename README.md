@@ -1,16 +1,32 @@
 # Appp Beer
 
-A new Flutter project.
+Este repositório é destinado às aulas de Programação Orientada a Objetos utilizando a tecnologia Flutter.
 
-## Getting Started
+# Tecnologias
 
-This project is a starting point for a Flutter application.
+| GetX                                                             |
+| ---------------------------------------------------------------- |
+| Utilizado para gerenciamento de estado e navegação na aplicação. |
 
-A few resources to get you started if this is your first Flutter project:
+| Google Fonts                             |
+| ---------------------------------------- |
+| Utilizado para personalização de fontes. |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Funcionalides
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Requisitos funcionais:
+
+- Permitir a navegação entre as páginas do projeto:
+  - Visualizar lista de cervejas;
+  - Visualizar a tela inicial;
+- Permitir o adiconamento de novas cervejas no catálogo;
+- Filtrar as cervejas por categorias;
+- Buscar as cervejas pelo nome ou ID;
+- Permitir excluir cervejas a partir do ID na busca;
+
+### Requisitos não funcionais:
+
+- Recriação apenas de widgets relacionados a mudanças de estado;
+- Tempo de resposta de no máximo 1s;
+- Conexão com internet para acessar a API;
+- Armazenamento local;
