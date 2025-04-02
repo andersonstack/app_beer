@@ -10,23 +10,25 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.red),
       drawer: Drawer(),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              color: Colors.blue,
-              child: const Text("Aqui será a HOME"),
-            ),
+      body: Expanded(
+        child: Container(
+          width: double.infinity,
+          color: Colors.blue,
+          child: Column(
+            children: [
+              Text(
+                "Descubra, avalie e registre suas cervejas favoritas em um só lugar! ",
+              ),
+              TextButton(
+                onPressed: () => {},
+                child: Text(
+                  "Visualizar cervejas",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              color: Colors.amber,
-              child: const Text("Aqui será a LISTA"),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
