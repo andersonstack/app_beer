@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
           color: Colors.blue,
           child: Column(
             children: [
+              Image.asset("assets/beer.png"),
               Text(
                 "Descubra, avalie e registre suas cervejas favoritas em um só lugar! ",
               ),
