@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Home(cervejas: cervejas, categorias: categorias),
+      home: HomeView(cervejas: cervejas, categorias: categorias),
     );
   }
 }
