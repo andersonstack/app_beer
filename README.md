@@ -4,9 +4,10 @@ Este repositório é destinado às aulas de Programação Orientada a Objetos ut
 
 # Tecnologias
 
-| GetX                                                             |
-| ---------------------------------------------------------------- |
-| Utilizado para gerenciamento de estado e navegação na aplicação. |
+| GetX                                   |
+| -------------------------------------- |
+| Utilizado para gerenciamento de estado |
+| Utilizado para gerenciar rotas         |
 
 | Google Fonts                             |
 | ---------------------------------------- |
