@@ -8,14 +8,14 @@ class Style {
 
     return ThemeData(
       scaffoldBackgroundColor: Color(0xFFF2F2F2),
-      colorScheme: __colorScheme(),
-      textTheme: __textTheme(screenWidth, size),
-      elevatedButtonTheme: __elevatedButton(),
-      textButtonTheme: __textButton(),
+      colorScheme: _colorScheme(),
+      textTheme: _textTheme(screenWidth, size),
+      elevatedButtonTheme: _elevatedButton(),
+      textButtonTheme: _textButton(),
     );
   }
 
-  static __colorScheme() {
+  static ColorScheme _colorScheme() {
     return ColorScheme.fromSwatch().copyWith(
       surface: Color(0xFFA62508),
       primary: Color(0xFFF2A20C),
@@ -24,7 +24,7 @@ class Style {
     );
   }
 
-  static __textTheme(screenWidth, size) {
+  static TextTheme _textTheme(screenWidth, size) {
     return TextTheme(
       bodyLarge: GoogleFonts.poppins(
         color: Color(0xFFA62508),
@@ -44,7 +44,7 @@ class Style {
     );
   }
 
-  static __elevatedButton() {
+  static ElevatedButtonThemeData _elevatedButton() {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFFF2A20C),
@@ -53,7 +53,7 @@ class Style {
     );
   }
 
-  static __textButton() {
+  static TextButtonThemeData _textButton() {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: Color(0xFFFFFFFF),
