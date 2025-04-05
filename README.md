@@ -13,7 +13,7 @@ Este repositório é destinado às aulas de Programação Orientada a Objetos ut
 | ---------------------------------------- |
 | Utilizado para personalização de fontes. |
 
-# Funcionalides
+# Funcionalidades
 
 ### Requisitos funcionais:
 
