@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../interface/icons.dart';
-
-class MyBottomNavigationController extends GetxController {
-  final botaoSelecionado = 0.obs;
-}
+import '../controller/navigationb_controller.dart';
 
 class MyBottomNavigation extends StatelessWidget {
   final Map<String, dynamic> bottomsNavigation;
