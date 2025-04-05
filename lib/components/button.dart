@@ -1,28 +1,17 @@
+import 'package:app_beer/interface/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Botao extends GetxController {
-  static Botao get to => Get.find();
+class BtnController extends GetxController {
+  static BtnController get to => Get.find();
 }
 
-class BotaoParametros {
+class BtnView extends StatelessWidget {
   final String title;
   final String icon;
-  Function onPress;
+  final Function onPress;
 
-  BotaoParametros({
-    required this.title,
-    required this.icon,
-    required this.onPress,
-  });
-}
-
-class BotaoView extends StatelessWidget {
-  final String title;
-  final String icon;
-  final Function? onPress;
-
-  const BotaoView({
+  const BtnView({
     super.key,
     required this.title,
     required this.icon,
@@ -31,10 +20,11 @@ class BotaoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => onPress,
-      style: Theme.of(context).textButtonTheme.style,
-      child: Text(title),
+    return ElevatedButton.icon(
+      onPressed: () => onPress(),
+      style: ButtonStyle(),
+      label: Text(title),
+      icon: icon == 'null' ? null : AppIcons.fromString(icon),
     );
   }
 }

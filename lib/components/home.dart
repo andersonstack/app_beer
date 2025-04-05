@@ -51,11 +51,11 @@ class HomeView extends StatelessWidget {
               "Descubra, avalie e registre suas cervejas favoritas em um só lugar!",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            BotaoView(
+            BtnView(
               title: "Visualizar cervejas",
               // ignore: avoid_print
               onPress: () => print("fui clicado"),
-              icon: "click",
+              icon: "null",
             ),
           ],
         ),
