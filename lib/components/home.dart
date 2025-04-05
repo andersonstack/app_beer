@@ -64,7 +64,7 @@ class HomeView extends StatelessWidget {
         bottomsNavigation: {
           "function1": {"icon": "home", "title": "Home"},
           "function2": {"icon": "filter", "title": "Filtrar"},
-          "function3": {"icon": "search", "title": "Buscar"},
+          "function3": {"icon": "list", "title": "Lista"},
         },
       ),
     );
