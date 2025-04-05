@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../interface/icons.dart';
+
+class MyBottomNavigationController extends GetxController {
+  final botaoSelecionado = 0.obs;
+}
 
 class MyBottomNavigation extends StatelessWidget {
   final Map<String, dynamic> bottomsNavigation;
@@ -8,15 +13,23 @@ class MyBottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items:
-          bottomsNavigation.entries.map((entry) {
-            final value = entry.value as Map<String, dynamic>;
-            return BottomNavigationBarItem(
-              icon: AppIcons.fromString(value["icon"]),
-              label: value["title"],
-            );
-          }).toList(),
+    final MyBottomNavigationController btnCurrent = Get.put(
+      MyBottomNavigationController(),
+    );
+
+    return Obx(
+      () => BottomNavigationBar(
+        currentIndex: btnCurrent.botaoSelecionado.value,
+        onTap: (index) => btnCurrent.botaoSelecionado.value = index,
+        items:
+            bottomsNavigation.entries.map((entry) {
+              final value = entry.value as Map<String, dynamic>;
+              return BottomNavigationBarItem(
+                icon: AppIcons.fromString(value["icon"]),
+                label: value["title"],
+              );
+            }).toList(),
+      ),
     );
   }
 }
