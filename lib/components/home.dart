@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/image_controller.dart';
 import './button.dart';
-import './appbar.dart';
+import 'bottom_navigation.dart';
 
 class HomeView extends StatelessWidget {
   final List<Map<String, dynamic>> cervejas;
