@@ -29,6 +29,7 @@ class HomeView extends StatelessWidget {
         width: double.infinity,
         color: Theme.of(context).colorScheme.surfaceContainer,
         child: Column(
+          spacing: 50,
           children: [
             GetX<ImageController>(
               builder:
