@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/image_controller.dart';
 import './button.dart';
+import './appbar.dart';
 
 class HomeView extends StatelessWidget {
   final List<Map<String, dynamic>> cervejas;
@@ -58,6 +59,13 @@ class HomeView extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: MyBottomNavigation(
+        bottomsNavigation: {
+          "function1": {"icon": "home", "title": "Home"},
+          "function2": {"icon": "filter", "title": "Filtrar"},
+          "function3": {"icon": "search", "title": "Buscar"},
+        },
       ),
     );
   }
