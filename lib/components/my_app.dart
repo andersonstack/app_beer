@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../style/style.dart';
 import 'package:get/get.dart';
+import '../style/style.dart';
+import './list_view.dart';
 
 // Classes
 import 'package:app_beer/components/home.dart';
@@ -17,13 +18,21 @@ class MyApp extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return GetMaterialApp(
+      initialRoute: '/',
       theme: Style.theme(screenHeight, screenWidth),
-      home: HomeView(
-        cervejas: cervejas,
-        categorias: categorias,
-        screenWidth: screenWidth,
-        screenHeight: screenHeight,
-      ),
+      getPages: [
+        GetPage(
+          name: '/',
+          page:
+              () => HomeView(
+                cervejas: cervejas,
+                categorias: categorias,
+                screenWidth: screenWidth,
+                screenHeight: screenHeight,
+              ),
+        ),
+        GetPage(name: '/list', page: () => ListBeer()),
+      ],
     );
   }
 }

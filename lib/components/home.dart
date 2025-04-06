@@ -54,7 +54,7 @@ class HomeView extends StatelessWidget {
             BtnView(
               title: "Visualizar cervejas",
               // ignore: avoid_print
-              onPress: () => print("fui clicado"),
+              onPress: () => Get.toNamed('/list'),
               icon: "null",
             ),
           ],
