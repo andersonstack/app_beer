@@ -5,22 +5,11 @@ import './button.dart';
 import 'bottom_navigation.dart';
 
 class HomeView extends StatelessWidget {
-  final List<Map<String, dynamic>> cervejas;
-  final List<String> categorias;
-  final double screenWidth;
-  final double screenHeight;
-
-  const HomeView({
-    super.key,
-    required this.cervejas,
-    required this.categorias,
-    required this.screenWidth,
-    required this.screenHeight,
-  });
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ImageController.to.init(screenWidth, screenHeight);
+    ImageController.to.init(Get.width, Get.height);
     ImageController.to.animate();
 
     return Scaffold(

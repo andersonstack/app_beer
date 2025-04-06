@@ -21,7 +21,15 @@ void main() {
   ];
   List<String> categorias = ["name", "style", "ibu"];
   Get.put(ImageController());
-  MyApp app = MyApp(cervejas: cervejas, categorias: categorias);
+  Get.put(AppController(cervejas: cervejas, categorias: categorias));
+  MyApp app = MyApp();
 
   runApp(app);
+}
+
+class AppController extends GetxController {
+  final List<Map<String, dynamic>> cervejas;
+  final List<String> categorias;
+
+  AppController({required this.cervejas, required this.categorias});
 }

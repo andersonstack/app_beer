@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../style/style.dart';
-import './list_view.dart';
 
 // Classes
 import 'package:app_beer/components/home.dart';
+import './list_view.dart';
+import '../style/style.dart';
 
 class MyApp extends StatelessWidget {
-  final List<Map<String, dynamic>> cervejas;
-  final List<String> categorias;
-
-  const MyApp({super.key, required this.cervejas, required this.categorias});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: Style.theme(screenHeight, screenWidth),
       getPages: [
-        GetPage(
-          name: '/',
-          page:
-              () => HomeView(
-                cervejas: cervejas,
-                categorias: categorias,
-                screenWidth: screenWidth,
-                screenHeight: screenHeight,
-              ),
-        ),
+        GetPage(name: '/', page: () => HomeView()),
         GetPage(name: '/list', page: () => ListBeer()),
       ],
     );
