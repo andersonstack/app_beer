@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controller/image_controller.dart';
-import './button.dart';
-import 'bottom_navigation.dart';
+
+import 'package:app_beer/controller/image_controller.dart';
+import 'package:app_beer/components/button_component.dart';
+import 'package:app_beer/components/navigationbar_component.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

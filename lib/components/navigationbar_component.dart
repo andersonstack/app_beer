@@ -1,8 +1,9 @@
-import 'package:app_beer/main.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../interface/icons.dart';
-import '../controller/navigationb_controller.dart';
+import 'package:flutter/material.dart';
+
+import 'package:app_beer/controller/app_controller.dart';
+import 'package:app_beer/interface/icons_interface.dart';
+import 'package:app_beer/controller/navigationb_controller.dart';
 
 class MyBottomNavigation extends StatelessWidget {
   const MyBottomNavigation({super.key});

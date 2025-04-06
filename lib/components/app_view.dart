@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // Classes
-import 'package:app_beer/components/home.dart';
-import './list_view.dart';
+import 'package:app_beer/components/home_component.dart';
+import 'list_component.dart';
 import '../style/style.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AppView extends StatelessWidget {
+  const AppView({super.key});
 
   @override
   Widget build(BuildContext context) {

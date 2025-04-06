@@ -1,7 +1,8 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
-import 'components/my_app.dart';
+import 'components/app_view.dart';
 import 'controller/image_controller.dart';
+import './controller/app_controller.dart';
 
 void main() {
   List<Map<String, dynamic>> cervejas = [
@@ -34,19 +35,7 @@ void main() {
       bottomNavigation: bottomNavigation,
     ),
   );
-  MyApp app = MyApp();
+  AppView app = AppView();
 
   runApp(app);
-}
-
-class AppController extends GetxController {
-  final List<Map<String, dynamic>> cervejas;
-  final List<String> categorias;
-  final Map<String, dynamic> bottomNavigation;
-
-  AppController({
-    required this.cervejas,
-    required this.categorias,
-    required this.bottomNavigation,
-  });
 }
