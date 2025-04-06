@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../style/style.dart';
+import 'package:get/get.dart';
 
 // Classes
 import 'package:app_beer/components/home.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return MaterialApp(
+    return GetMaterialApp(
       theme: Style.theme(screenHeight, screenWidth),
       home: HomeView(
         cervejas: cervejas,
