@@ -20,8 +20,20 @@ void main() {
     {"name": "Corona", "style": "Lager", "ibu": "50"},
   ];
   List<String> categorias = ["name", "style", "ibu"];
+  Map<String, dynamic> bottomNavigation = {
+    "function1": {"icon": "home", "title": "Home"},
+    "function2": {"icon": "filter", "title": "Filtrar"},
+    "function3": {"icon": "list", "title": "Lista"},
+  };
+
   Get.put(ImageController());
-  Get.put(AppController(cervejas: cervejas, categorias: categorias));
+  Get.put(
+    AppController(
+      cervejas: cervejas,
+      categorias: categorias,
+      bottomNavigation: bottomNavigation,
+    ),
+  );
   MyApp app = MyApp();
 
   runApp(app);
@@ -30,6 +42,11 @@ void main() {
 class AppController extends GetxController {
   final List<Map<String, dynamic>> cervejas;
   final List<String> categorias;
+  final Map<String, dynamic> bottomNavigation;
 
-  AppController({required this.cervejas, required this.categorias});
+  AppController({
+    required this.cervejas,
+    required this.categorias,
+    required this.bottomNavigation,
+  });
 }
