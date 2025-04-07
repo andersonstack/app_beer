@@ -37,9 +37,12 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
             ),
-            Text(
-              "Descubra, avalie e registre suas cervejas favoritas em um só lugar!",
-              style: Theme.of(context).textTheme.bodyMedium,
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Text(
+                "Descubra, avalie e registre suas cervejas favoritas em um só lugar!",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
             BtnView(
               title: "Visualizar cervejas",
