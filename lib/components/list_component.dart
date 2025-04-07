@@ -46,10 +46,6 @@ class ListBeer extends StatelessWidget {
                       beer['name'],
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                    subtitle: Text(
-                      '${beer['style']} - IBU: ${beer['ibu']}',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
                     trailing: const Icon(Icons.arrow_forward),
                     onTap: () {},
                   ),
