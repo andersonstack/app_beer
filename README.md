@@ -1,4 +1,4 @@
-# Appp Beer
+# App Beer
 
 Este repositório é destinado às aulas de Programação Orientada a Objetos utilizando a tecnologia Flutter.
 
