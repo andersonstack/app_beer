@@ -22,7 +22,11 @@ void main() {
     "0014": {"name": "Corona", "style": "Lager", "ibu": "50"},
   };
 
-  List<String> categorias = ["name", "style", "ibu"];
+  Map<String, dynamic> categorias = {
+    "key1": "name",
+    "key2": "style",
+    "key3": "ibu",
+  };
   Map<String, dynamic> bottomNavigation = {
     "function1": {"icon": "home", "title": "Home"},
     "function2": {"icon": "filter", "title": "Filtrar"},
