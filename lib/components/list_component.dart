@@ -10,7 +10,7 @@ class ListBeer extends StatelessWidget {
     final AppController appController = Get.find();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Lista de Cervejas")),
+      appBar: AppBar(title: null),
       body: Column(
         children: [
           Padding(
