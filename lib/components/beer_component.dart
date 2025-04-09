@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Beer extends StatelessWidget {
-  const Beer({super.key});
+  final String id;
+
+  const Beer({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(appBar: AppBar(title: Text("")));
   }
 }

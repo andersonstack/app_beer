@@ -10,7 +10,7 @@ class ListBeer extends StatelessWidget {
     final AppController appController = Get.find();
 
     return Scaffold(
-      appBar: AppBar(title: null),
+      appBar: AppBar(title: Text("")),
       body: Column(
         children: [
           Padding(
@@ -47,7 +47,9 @@ class ListBeer extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     trailing: const Icon(Icons.arrow_forward),
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed('/beer/$key');
+                    },
                   ),
                 );
               },

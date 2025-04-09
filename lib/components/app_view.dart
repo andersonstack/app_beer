@@ -1,3 +1,4 @@
+import 'package:app_beer/components/beer_component.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,13 @@ class AppView extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => HomeView()),
         GetPage(name: '/list', page: () => ListBeer()),
+        GetPage(
+          name: '/beer/:id',
+          page: () {
+            final String id = Get.parameters['id']!;
+            return Beer(id: id);
+          },
+        ),
       ],
     );
   }
