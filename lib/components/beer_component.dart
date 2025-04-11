@@ -1,3 +1,4 @@
+import 'package:app_beer/components/button_component.dart';
 import 'package:app_beer/controller/app_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,20 +18,35 @@ class Beer extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
-      body: SizedBox(
-        width: double.infinity,
-        child: DataTable(
-          columns: [
-            DataColumn(label: Text("NOME")),
-            DataColumn(label: Text("STYLE")),
-            DataColumn(label: Text("IBU")),
-          ],
-          rows: [
-            DataRow(
-              cells: [
-                DataCell(Text(beer["name"])),
-                DataCell(Text(beer["style"])),
-                DataCell(Text(beer["ibu"])),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          spacing: 50,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: DataTable(
+                columns: [
+                  DataColumn(label: Text("NOME")),
+                  DataColumn(label: Text("STYLE")),
+                  DataColumn(label: Text("IBU")),
+                ],
+                rows: [
+                  DataRow(
+                    cells: [
+                      DataCell(Text(beer["name"])),
+                      DataCell(Text(beer["style"])),
+                      DataCell(Text(beer["ibu"])),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BtnView(title: "Editar", icon: "edit", onPress: () {}),
+                BtnView(title: "Deletar", icon: "delete", onPress: () {}),
               ],
             ),
           ],

@@ -11,6 +11,8 @@ class AppIcons {
         return Icon(Icons.manage_search);
       case 'LIST':
         return Icon(Icons.format_list_bulleted_rounded);
+      case 'EDIT':
+        return Icon(Icons.edit);
       default:
         return Icon(Icons.error); // Fallback para ícone de erro
     }
