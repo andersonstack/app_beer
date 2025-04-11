@@ -17,8 +17,24 @@ class Beer extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
-      body: Center(
-        child: Text("${beer["name"]} ${beer["style"]} ${beer["ibu"]}"),
+      body: SizedBox(
+        width: double.infinity,
+        child: DataTable(
+          columns: [
+            DataColumn(label: Text("NOME")),
+            DataColumn(label: Text("STYLE")),
+            DataColumn(label: Text("IBU")),
+          ],
+          rows: [
+            DataRow(
+              cells: [
+                DataCell(Text(beer["name"])),
+                DataCell(Text(beer["style"])),
+                DataCell(Text(beer["ibu"])),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
