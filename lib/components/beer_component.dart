@@ -47,8 +47,16 @@ class Beer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                BtnView(title: "Editar", icon: "edit", onPress: () {}),
-                BtnView(title: "Deletar", icon: "delete", onPress: () {}),
+                BtnView.editStyle(
+                  title: "Editar",
+                  icon: "edit",
+                  onPress: () {},
+                ),
+                BtnView.deleteStyle(
+                  title: "Deletar",
+                  icon: "delete",
+                  onPress: () {},
+                ),
               ],
             ),
           ],
