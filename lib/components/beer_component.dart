@@ -27,6 +27,7 @@ class Beer extends StatelessWidget {
               width: double.infinity,
               child: DataTable(
                 columns: [
+                  DataColumn(label: Text("ID")),
                   DataColumn(label: Text("NOME")),
                   DataColumn(label: Text("STYLE")),
                   DataColumn(label: Text("IBU")),
@@ -34,6 +35,7 @@ class Beer extends StatelessWidget {
                 rows: [
                   DataRow(
                     cells: [
+                      DataCell(Text(id)),
                       DataCell(Text(beer["name"])),
                       DataCell(Text(beer["style"])),
                       DataCell(Text(beer["ibu"])),
