@@ -10,7 +10,7 @@ class Style {
       scaffoldBackgroundColor: Color(0xFFF2F2F2),
       colorScheme: _colorScheme(),
       textTheme: _textTheme(screenWidth, size),
-      elevatedButtonTheme: _elevatedButton(),
+      // elevatedButtonTheme: _elevatedButton(),
       textButtonTheme: _textButton(),
     );
   }
@@ -44,14 +44,14 @@ class Style {
     );
   }
 
-  static ElevatedButtonThemeData _elevatedButton() {
-    return ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFFF2A20C),
-        foregroundColor: Colors.white,
-      ),
-    );
-  }
+  // static ElevatedButtonThemeData _elevatedButton() {
+  //   return ElevatedButtonThemeData(
+  //     style: ElevatedButton.styleFrom(
+  //       backgroundColor: Color(0xFFF2A20C),
+  //       foregroundColor: Colors.white,
+  //     ),
+  //   );
+  // }
 
   static TextButtonThemeData _textButton() {
     return TextButtonThemeData(
