@@ -13,6 +13,8 @@ class AppIcons {
         return Icon(Icons.format_list_bulleted_rounded);
       case 'EDIT':
         return Icon(Icons.edit);
+      case 'DELETE':
+        return Icon(Icons.delete);
       default:
         return Icon(Icons.error); // Fallback para ícone de erro
     }
