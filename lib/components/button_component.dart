@@ -13,7 +13,7 @@ class BtnView extends StatelessWidget {
   final Function onPress;
   final ButtonStyle? style;
 
-  const BtnView._({
+  const BtnView({
     super.key,
     required this.title,
     required this.icon,
@@ -27,7 +27,7 @@ class BtnView extends StatelessWidget {
     required VoidCallback onPress,
     required String icon,
   }) {
-    return BtnView._(
+    return BtnView(
       key: key,
       title: title,
       icon: icon,
@@ -42,7 +42,7 @@ class BtnView extends StatelessWidget {
     required VoidCallback onPress,
     required String icon,
   }) {
-    return BtnView._(
+    return BtnView(
       key: key,
       title: title,
       icon: icon,
@@ -57,7 +57,7 @@ class BtnView extends StatelessWidget {
     required VoidCallback onPress,
     required String icon,
   }) {
-    return BtnView._(
+    return BtnView(
       key: key,
       title: title,
       icon: icon,

@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
-            BtnView.defaultStyle(
+            BtnView(
               title: "Visualizar cervejas",
               // ignore: avoid_print
               onPress: () => Get.toNamed('/list'),
