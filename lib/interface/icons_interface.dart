@@ -16,7 +16,7 @@ class AppIcons {
       case 'DELETE':
         return Icon(Icons.delete);
       default:
-        return Icon(Icons.error); // Fallback para ícone de erro
+        return Icon(Icons.question_mark); // Fallback para ícone de erro
     }
   }
 }
