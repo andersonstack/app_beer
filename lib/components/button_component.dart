@@ -1,4 +1,4 @@
-import 'package:app_beer/style/btnStyle.dart';
+import 'package:app_beer/style/btn_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_beer/interface/icons_interface.dart';
@@ -76,3 +76,4 @@ class BtnView extends StatelessWidget {
     );
   }
 }
+ 
