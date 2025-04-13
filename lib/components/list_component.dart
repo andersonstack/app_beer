@@ -30,10 +30,6 @@ class ListBeer extends StatelessWidget {
               itemBuilder: (context, index) {
                 final key = appController.cervejas.keys.elementAt(index);
                 final beer = appController.cervejas[key]!;
-                // ignore: avoid_print
-                print(
-                  "CONTEXTO: $context, INDEX: $index, KEY: $key, BEER: $beer",
-                );
 
                 return Card(
                   key: Key(key),

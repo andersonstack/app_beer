@@ -11,10 +11,6 @@ class Beer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppController controller = Get.find();
-    final beer = controller.cervejas[id]!;
-
-    // ignore: avoid_print
-    print("CERVEJA ${beer["name"]} ${beer["style"]} ${beer["ibu"]}");
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
@@ -26,20 +22,29 @@ class Beer extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: DataTable(
-                columns: [
-                  DataColumn(label: Text("ID")),
-                  DataColumn(label: Text("NOME")),
-                  DataColumn(label: Text("STYLE")),
-                  DataColumn(label: Text("IBU")),
-                ],
+                columns:
+                    controller.categorias.values.map((value) {
+                      return DataColumn(
+                        label: Text(
+                          "${value.toUpperCase()}",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                      );
+                    }).toList(),
                 rows: [
                   DataRow(
-                    cells: [
-                      DataCell(Text(id)),
-                      DataCell(Text(beer["name"])),
-                      DataCell(Text(beer["style"])),
-                      DataCell(Text(beer["ibu"])),
-                    ],
+                    cells:
+                        (controller.cervejas[id]! as Map<String, dynamic>)
+                            .values
+                            .map<DataCell>((value) {
+                              return DataCell(
+                                Text(
+                                  value,
+                                  style: Theme.of(context).textTheme.bodySmall,
+                                ),
+                              );
+                            })
+                            .toList(),
                   ),
                 ],
               ),
