@@ -9,7 +9,7 @@ class Style {
     return ThemeData(
       scaffoldBackgroundColor: Color(0xFFF2F2F2),
       colorScheme: _colorScheme(),
-      textTheme: _textTheme(screenWidth, size),
+      textTheme: _beerTextTheme(screenWidth, size),
       // elevatedButtonTheme: _elevatedButton(),
       textButtonTheme: _textButton(),
     );
@@ -24,22 +24,45 @@ class Style {
     );
   }
 
-  static TextTheme _textTheme(screenWidth, size) {
+  static TextTheme _beerTextTheme(double screenWidth, double size) {
     return TextTheme(
-      bodyLarge: GoogleFonts.poppins(
-        color: Color(0xFFA62508),
-        fontSize: (screenWidth * size).clamp(14.0, 26.0),
+      // Títulos principais (nomes de cervejas)
+      displayLarge: GoogleFonts.bebasNeue(
+        color: Color(0xFF8B4513), // Marrom cerveja
+        fontSize: (screenWidth * size * 1).clamp(24.0, 48.0),
+        letterSpacing: 1.5,
+      ),
+
+      // Subtítulos (estilos de cerveja)
+      displayMedium: GoogleFonts.lexendGiga(
+        color: Color.fromARGB(255, 0, 0, 0), // Vermelho cerveja
+        fontSize: (screenWidth * size).clamp(18.0, 32.0),
+      ),
+
+      // Texto de corpo (descrições)
+      bodyLarge: GoogleFonts.raleway(
+        color: Color(0xFF3E2723), // Marrom escuro
+        fontSize: (screenWidth * size).clamp(14.0, 22.0),
         fontWeight: FontWeight.w500,
       ),
-      bodyMedium: GoogleFonts.poppins(
-        color: Color(0xFFA62508),
-        fontSize: (screenWidth * size).clamp(12.0, 22.0),
-        fontWeight: FontWeight.w500,
+
+      // Texto secundário (IBU, ABV)
+      bodyMedium: GoogleFonts.oxygen(
+        color: Color(0xFF5D4037), // Marrom médio
+        fontSize: (screenWidth * size * 0.9).clamp(12.0, 18.0),
       ),
-      bodySmall: GoogleFonts.poppins(
-        color: Colors.black,
-        fontSize: (screenWidth * size * 0.8).clamp(10.0, 18.0),
-        fontWeight: FontWeight.normal,
+
+      // Texto pequeno (notas, rodapé)
+      bodySmall: GoogleFonts.oxygen(
+        color: Colors.brown[600],
+        fontSize: (screenWidth * size * 0.7).clamp(10.0, 14.0),
+      ),
+
+      // Botões e ações
+      labelLarge: GoogleFonts.bebasNeue(
+        color: Colors.white,
+        fontSize: (screenWidth * size * 0.9).clamp(16.0, 28.0),
+        letterSpacing: 1.2,
       ),
     );
   }

@@ -18,7 +18,7 @@ class ListBeer extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 labelText: 'Pesquisar cerveja',
-                labelStyle: Theme.of(context).textTheme.bodyMedium,
+                labelStyle: Theme.of(context).textTheme.bodyLarge,
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(),
               ),
@@ -40,7 +40,7 @@ class ListBeer extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       beer['name'],
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
                     trailing: const Icon(Icons.arrow_forward),
                     onTap: () {

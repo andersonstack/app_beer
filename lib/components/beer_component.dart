@@ -27,7 +27,7 @@ class Beer extends StatelessWidget {
                       return DataColumn(
                         label: Text(
                           "${value.toUpperCase()}",
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
                       );
                     }).toList(),
@@ -40,7 +40,7 @@ class Beer extends StatelessWidget {
                               return DataCell(
                                 Text(
                                   value,
-                                  style: Theme.of(context).textTheme.bodySmall,
+                                  style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                               );
                             })

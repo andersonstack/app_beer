@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: Text(
                 "Descubra, avalie e registre suas cervejas favoritas em um só lugar!",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             BtnView(
