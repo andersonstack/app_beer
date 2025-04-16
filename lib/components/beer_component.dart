@@ -12,9 +12,10 @@ class Beer extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppController controller = Get.find();
     final int index = controller.cervejas.indexWhere(
-      (cerveja) => cerveja["id"] == id,
+      (cerveja) => cerveja["id"].toString() == id,
     );
     final cervejas = controller.cervejas[index];
+    print(cervejas);
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
@@ -27,10 +28,10 @@ class Beer extends StatelessWidget {
               width: double.infinity,
               child: DataTable(
                 columns:
-                    controller.categorias.values.map((value) {
+                    controller.categorias.values.map((chave) {
                       return DataColumn(
                         label: Text(
-                          "${value.toUpperCase()}",
+                          "${chave.toUpperCase()}",
                           style: Theme.of(context).textTheme.displayLarge,
                         ),
                       );
@@ -38,10 +39,10 @@ class Beer extends StatelessWidget {
                 rows: [
                   DataRow(
                     cells:
-                        cervejas.entries.map((entry) {
+                        controller.categorias.values.map((chave) {
                           return DataCell(
                             Text(
-                              "${entry.value}",
+                              "${cervejas[chave]}",
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           );

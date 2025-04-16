@@ -10,4 +10,5 @@ class AppController extends GetxController {
     required this.categorias,
     required this.bottomNavigation,
   });
+  
 }

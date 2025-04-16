@@ -1,19 +1,12 @@
+import 'package:app_beer/controller/app_request.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'components/app_view.dart';
 import 'controller/image_controller.dart';
 import './controller/app_controller.dart';
 
-void main() {
-  List<Map<String, dynamic>> cervejas = [
-    {"id": "1547", "name": "La Fin Du Monde", "style": "Bock", "ibu": "65"},
-    {"id": "0458", "name": "Sapporo Premium", "style": "Sour Ale", "ibu": "54"},
-    {"id": "7894", "name": "Duvel", "style": "Pilsner", "ibu": "82"},
-    {"id": "3535", "name": "Carlsberg", "style": "Lager", "ibu": "50"},
-    {"id": "4548", "name": "Stella Artois", "style": "Lager", "ibu": "50"},
-    {"id": "1978", "name": "Heineken", "style": "Lager", "ibu": "50"},
-    {"id": "0147", "name": "Corona", "style": "Lager", "ibu": "50"},
-  ];
+void main() async {
+  List<Map<String, dynamic>> cervejas = await AppRequest.getBeers();
 
   Map<String, dynamic> categorias = {
     "key0": "id",
