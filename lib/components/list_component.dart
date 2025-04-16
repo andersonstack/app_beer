@@ -28,24 +28,21 @@ class ListBeer extends StatelessWidget {
             child: ListView.builder(
               itemCount: appController.cervejas.length,
               itemBuilder: (context, index) {
-                final key = appController.cervejas.keys.elementAt(index);
-                final beer = appController.cervejas[key]!;
+                final cerveja = appController.cervejas[index];
 
                 return Card(
-                  key: Key(key),
                   margin: const EdgeInsets.symmetric(
                     horizontal: 8,
                     vertical: 4,
                   ),
                   child: ListTile(
-                    title: Text(
-                      beer['name'],
-                      style: Theme.of(context).textTheme.displayLarge,
-                    ),
-                    trailing: const Icon(Icons.arrow_forward),
-                    onTap: () {
-                      Get.toNamed('/beer/$key');
-                    },
+                    title: Text(cerveja["name"]),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    onTap:
+                        () => Get.toNamed(
+                          "/beer/${cerveja["id"]}",
+                          arguments: cerveja,
+                        ),
                   ),
                 );
               },

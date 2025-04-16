@@ -5,24 +5,18 @@ import 'controller/image_controller.dart';
 import './controller/app_controller.dart';
 
 void main() {
-  Map<String, dynamic> cervejas = {
-    "0001": {"name": "La Fin Du Monde", "style": "Bock", "ibu": "65"},
-    "0002": {"name": "Sapporo Premium", "style": "Sour Ale", "ibu": "54"},
-    "0003": {"name": "Duvel", "style": "Pilsner", "ibu": "82"},
-    "0004": {"name": "Carlsberg", "style": "Lager", "ibu": "50"},
-    "0005": {"name": "Stella Artois", "style": "Lager", "ibu": "50"},
-    "0006": {"name": "Heineken", "style": "Lager", "ibu": "50"},
-    "0007": {"name": "Corona", "style": "Lager", "ibu": "50"},
-    "0008": {"name": "Budweiser", "style": "Lager", "ibu": "50"},
-    "0009": {"name": "Amstel", "style": "Lager", "ibu": "50"},
-    "0010": {"name": "Amstel", "style": "Lager", "ibu": "50"},
-    "0011": {"name": "Carlsberg", "style": "Lager", "ibu": "50"},
-    "0012": {"name": "Sapporo Premium", "style": "Lager", "ibu": "50"},
-    "0013": {"name": "Stella Artois", "style": "Lager", "ibu": "50"},
-    "0014": {"name": "Corona", "style": "Lager", "ibu": "50"},
-  };
+  List<Map<String, dynamic>> cervejas = [
+    {"id": "1547", "name": "La Fin Du Monde", "style": "Bock", "ibu": "65"},
+    {"id": "0458", "name": "Sapporo Premium", "style": "Sour Ale", "ibu": "54"},
+    {"id": "7894", "name": "Duvel", "style": "Pilsner", "ibu": "82"},
+    {"id": "3535", "name": "Carlsberg", "style": "Lager", "ibu": "50"},
+    {"id": "4548", "name": "Stella Artois", "style": "Lager", "ibu": "50"},
+    {"id": "1978", "name": "Heineken", "style": "Lager", "ibu": "50"},
+    {"id": "0147", "name": "Corona", "style": "Lager", "ibu": "50"},
+  ];
 
   Map<String, dynamic> categorias = {
+    "key0": "id",
     "key1": "name",
     "key2": "style",
     "key3": "ibu",

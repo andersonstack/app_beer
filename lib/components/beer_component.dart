@@ -11,6 +11,10 @@ class Beer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppController controller = Get.find();
+    final int index = controller.cervejas.indexWhere(
+      (cerveja) => cerveja["id"] == id,
+    );
+    final cervejas = controller.cervejas[index];
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
@@ -34,17 +38,14 @@ class Beer extends StatelessWidget {
                 rows: [
                   DataRow(
                     cells:
-                        (controller.cervejas[id]! as Map<String, dynamic>)
-                            .values
-                            .map<DataCell>((value) {
-                              return DataCell(
-                                Text(
-                                  value,
-                                  style: Theme.of(context).textTheme.bodyLarge,
-                                ),
-                              );
-                            })
-                            .toList(),
+                        cervejas.entries.map((entry) {
+                          return DataCell(
+                            Text(
+                              "${entry.value}",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          );
+                        }).toList(),
                   ),
                 ],
               ),
