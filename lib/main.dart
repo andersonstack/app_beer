@@ -6,7 +6,9 @@ import 'controller/image_controller.dart';
 import './controller/app_controller.dart';
 
 void main() async {
-  List<Map<String, dynamic>> cervejas = await AppRequest.getBeers();
+  Get.put(AppRequest());
+  final api = Get.find<AppRequest>();
+  List<Map<String, dynamic>> cervejas = await api.getListBeers();
 
   Map<String, dynamic> categorias = {
     "key0": "id",
