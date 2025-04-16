@@ -15,7 +15,6 @@ class Beer extends StatelessWidget {
       (cerveja) => cerveja["id"].toString() == id,
     );
     final cervejas = controller.cervejas[index];
-    print(cervejas);
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
