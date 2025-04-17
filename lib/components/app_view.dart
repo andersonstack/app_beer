@@ -1,4 +1,5 @@
 import 'package:app_beer/components/beer_component.dart';
+import 'package:app_beer/controller/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,20 +16,24 @@ class AppView extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return GetMaterialApp(
-      initialRoute: '/',
-      theme: Style.theme(screenHeight, screenWidth),
-      getPages: [
-        GetPage(name: '/', page: () => HomeView()),
-        GetPage(name: '/list', page: () => ListBeer()),
-        GetPage(
-          name: '/beer/:id',
-          page: () {
-            final String id = Get.parameters['id']!;
-            return Beer(id: id);
-          },
-        ),
-      ],
+    return Obx(
+      () => GetMaterialApp(
+        initialRoute: '/',
+        theme: Style.themeLight(screenHeight, screenWidth),
+        darkTheme: Style.darkTheme(screenHeight, screenWidth),
+        themeMode: Get.find<ThemeController>().currentTheme,
+        getPages: [
+          GetPage(name: '/', page: () => HomeView()),
+          GetPage(name: '/list', page: () => ListBeer()),
+          GetPage(
+            name: '/beer/:id',
+            page: () {
+              final String id = Get.parameters['id']!;
+              return Beer(id: id);
+            },
+          ),
+        ],
+      ),
     );
   }
 }

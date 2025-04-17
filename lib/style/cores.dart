@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 enum AppColor {
   scaffold,
-  primary,
+  surface,
+  marromClaro,
   bodyLarge,
   bodyMedium,
   background,
-  foreground,
+  backgroundColor,
   textPrimary,
   textSecondary,
   textOnPrimary,
@@ -19,10 +20,18 @@ enum AppColor {
 extension AppLight on AppColor {
   Color get color {
     switch (this) {
-      case AppColor.scaffold:
-        return const Color(0xFFFBF8F5); // Fundo principal claro
+      case AppColor.surface:
+        return const Color(0xFF3E2723);
 
-      case AppColor.primary:
+      case AppColor.scaffold:
+        return const Color.fromARGB(
+          255,
+          228,
+          226,
+          226,
+        ); // Fundo principal claro
+
+      case AppColor.marromClaro:
         return const Color(0xFFB77A4A); // Marrom claro (principal)
 
       case AppColor.bodyLarge:
@@ -34,13 +43,23 @@ extension AppLight on AppColor {
         return const Color(0xFF3E2723); // Texto secundário / subtítulo
 
       case AppColor.background:
-        return const Color(0xFFFFFFFF); // Branco puro (background alternativo)
+        return const Color.fromARGB(
+          255,
+          0,
+          0,
+          0,
+        ); // Branco puro (background alternativo)
 
-      case AppColor.foreground:
-        return Colors.black; // Para usar sobre superfícies amarelas claras
+      case AppColor.backgroundColor:
+        return const Color.fromARGB(
+          255,
+          27,
+          26,
+          26,
+        ); // Para usar sobre superfícies amarelas claras
 
       case AppColor.textOnPrimary:
-        return Colors.white;
+        return const Color.fromARGB(255, 26, 7, 7);
 
       case AppColor.textOnSecondary:
         return Colors.black;
@@ -60,10 +79,13 @@ extension AppLight on AppColor {
 extension AppDark on AppColor {
   Color get color {
     switch (this) {
+      case AppColor.surface:
+        return const Color.fromARGB(255, 141, 141, 141);
+
       case AppColor.scaffold:
         return const Color(0xFF2E2B28); // fundo base dark
 
-      case AppColor.primary:
+      case AppColor.marromClaro:
         return const Color(0xFF3A332F); // marrom escuro suave
 
       case AppColor.bodyLarge:
@@ -79,7 +101,7 @@ extension AppDark on AppColor {
           0xFF1C1A18,
         ); // fundo alternativo (cartões, containers)
 
-      case AppColor.foreground:
+      case AppColor.backgroundColor:
         return Colors.white; // textos sobre fundo escuro
 
       case AppColor.textOnPrimary:
@@ -89,8 +111,11 @@ extension AppDark on AppColor {
         return Colors.black;
 
       case AppColor.accent:
-        return const Color(
-          0xFFF2A20C,
+        return const Color.fromARGB(
+          255,
+          238,
+          227,
+          207,
         ); // amarelo quente, bom destaque no escuro
 
       case AppColor.error:
