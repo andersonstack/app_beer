@@ -11,7 +11,13 @@ class ListBeer extends StatelessWidget {
     final AppController appController = Get.find();
 
     return Scaffold(
-      appBar: AppBar(title: Text("")),
+      appBar: AppBar(
+        title: Text(""),
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () => Get.toNamed("/"),
+        ),
+      ),
       body: Column(
         children: [
           Padding(

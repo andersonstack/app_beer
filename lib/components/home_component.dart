@@ -10,7 +10,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Theme.of(context).colorScheme.surface),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        leading: IconButton(onPressed: () {}, icon: Icon(Icons.dark_mode)),
+      ),
       body: Container(
         width: double.infinity,
         color: Theme.of(context).colorScheme.surfaceContainer,
