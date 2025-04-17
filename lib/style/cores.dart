@@ -1,77 +1,55 @@
 import 'package:flutter/material.dart';
 
 enum AppColor {
+  fundoPrimario,
+  fundoSecundario,
   scaffold,
-  surface,
-  marromClaro,
-  bodyLarge,
-  bodyMedium,
-  background,
-  backgroundColor,
-  textPrimary,
-  textSecondary,
-  textOnPrimary,
-  textOnSecondary,
-  accent,
-  error,
-  link,
+  corpoTexto,
+  descricoes,
+  titulos,
+  subtitulos,
+  links,
+  erros,
+  destaque,
+  uncliked,
 }
 
 extension AppLight on AppColor {
   Color get color {
     switch (this) {
-      case AppColor.surface:
-        return const Color(0xFF3E2723);
+      case AppColor.uncliked:
+        return Color(0xFFCED9B8);
 
+      case AppColor.fundoPrimario:
+        return Colors.grey[300]!;
+
+      case AppColor.fundoSecundario:
+        return Color.fromARGB(255, 128, 135, 150);
+
+      case AppColor.descricoes:
       case AppColor.scaffold:
-        return const Color.fromARGB(
-          255,
-          228,
-          226,
-          226,
-        ); // Fundo principal claro
+        return Color(0xFF121940);
 
-      case AppColor.marromClaro:
-        return const Color(0xFFB77A4A); // Marrom claro (principal)
+      case AppColor.corpoTexto:
+        return Colors.black87;
 
-      case AppColor.bodyLarge:
-      case AppColor.textPrimary:
-        return const Color(0xFF212121); // Texto principal (alto contraste)
+      case AppColor.descricoes:
+        return Color(0xFF010440);
 
-      case AppColor.bodyMedium:
-      case AppColor.textSecondary:
-        return const Color(0xFF3E2723); // Texto secundário / subtítulo
-
-      case AppColor.background:
-        return const Color.fromARGB(
-          255,
-          0,
-          0,
-          0,
-        ); // Branco puro (background alternativo)
-
-      case AppColor.backgroundColor:
-        return const Color.fromARGB(
-          255,
-          27,
-          26,
-          26,
-        ); // Para usar sobre superfícies amarelas claras
-
-      case AppColor.textOnPrimary:
-        return const Color.fromARGB(255, 26, 7, 7);
-
-      case AppColor.textOnSecondary:
+      case AppColor.titulos:
         return Colors.black;
 
-      case AppColor.accent:
-        return const Color(0xFFF2A20C); // Amarelo destaque
+      case AppColor.subtitulos:
+        return Colors.black54;
 
-      case AppColor.error:
-        return Colors.redAccent.shade700;
+      case AppColor.links:
+        return Colors.blue;
 
-      case AppColor.link:
-        return Colors.blue.shade700;
+      case AppColor.erros:
+        return Colors.red;
+
+      case AppColor.destaque:
+        return Color(0xFFCED9B8);
     }
   }
 }
@@ -79,52 +57,38 @@ extension AppLight on AppColor {
 extension AppDark on AppColor {
   Color get color {
     switch (this) {
-      case AppColor.surface:
-        return const Color.fromARGB(255, 141, 141, 141);
+      case AppColor.uncliked:
+        return Color(0xFF2D3A2E);
+
+      case AppColor.fundoPrimario:
+        return Color(0xFF1E1E2C);
+
+      case AppColor.fundoSecundario:
+        return Color(0xFF2D3142);
 
       case AppColor.scaffold:
-        return const Color(0xFF2E2B28); // fundo base dark
+        return Color(0xFF0D111C);
 
-      case AppColor.marromClaro:
-        return const Color(0xFF3A332F); // marrom escuro suave
+      case AppColor.descricoes:
+        return Color(0xFF8892BF);
 
-      case AppColor.bodyLarge:
-      case AppColor.textPrimary:
-        return Colors.white; // texto principal com bom contraste
+      case AppColor.corpoTexto:
+        return Colors.white70;
 
-      case AppColor.bodyMedium:
-      case AppColor.textSecondary:
-        return Colors.grey; // texto secundário
+      case AppColor.titulos:
+        return Colors.white;
 
-      case AppColor.background:
-        return const Color(
-          0xFF1C1A18,
-        ); // fundo alternativo (cartões, containers)
+      case AppColor.subtitulos:
+        return Colors.white60;
 
-      case AppColor.backgroundColor:
-        return Colors.white; // textos sobre fundo escuro
+      case AppColor.links:
+        return Color(0xFF80CFFF);
 
-      case AppColor.textOnPrimary:
-        return Colors.black; // textos sobre botões/elementos coloridos
+      case AppColor.erros:
+        return Color(0xFFFF6B6B);
 
-      case AppColor.textOnSecondary:
-        return Colors.black;
-
-      case AppColor.accent:
-        return const Color.fromARGB(
-          255,
-          238,
-          227,
-          207,
-        ); // amarelo quente, bom destaque no escuro
-
-      case AppColor.error:
-        return Colors
-            .redAccent
-            .shade400; // vermelho mais claro visível no escuro
-
-      case AppColor.link:
-        return Colors.blue.shade300; // azul legível no fundo escuro
+      case AppColor.destaque:
+        return Color(0xFFA3B18A);
     }
   }
 }
