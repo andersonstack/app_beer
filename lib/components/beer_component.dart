@@ -1,4 +1,5 @@
 import 'package:app_beer/components/button_component.dart';
+import 'package:app_beer/components/navigationbar_component.dart';
 import 'package:app_beer/controller/app_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,6 +69,7 @@ class Beer extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const MyBottomNavigation(),
     );
   }
 }

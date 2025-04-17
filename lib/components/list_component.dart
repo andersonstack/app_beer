@@ -1,3 +1,4 @@
+import 'package:app_beer/components/navigationbar_component.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_beer/controller/app_controller.dart';
@@ -50,6 +51,7 @@ class ListBeer extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: const MyBottomNavigation(),
     );
   }
 }

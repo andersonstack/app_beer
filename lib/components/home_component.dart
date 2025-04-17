@@ -52,7 +52,7 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: MyBottomNavigation(),
+      bottomNavigationBar: const MyBottomNavigation(),
     );
   }
 }
