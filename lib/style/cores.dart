@@ -33,9 +33,6 @@ extension AppLight on AppColor {
       case AppColor.corpoTexto:
         return Colors.black87;
 
-      case AppColor.descricoes:
-        return Color(0xFF010440);
-
       case AppColor.titulos:
         return Colors.black;
 
