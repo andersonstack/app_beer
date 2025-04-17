@@ -18,7 +18,7 @@ class MyBottomNavigation extends StatelessWidget {
     return Obx(
       () => BottomNavigationBar(
         currentIndex: btnCurrent.botaoSelecionado.value,
-        onTap: (index) => btnCurrent.botaoSelecionado.value = index,
+        onTap: (index) => btnCurrent.changeIndex(index),
         items:
             appController.bottomNavigation.entries.map((entry) {
               final value = entry.value as Map<String, dynamic>;

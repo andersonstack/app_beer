@@ -17,9 +17,8 @@ void main() async {
     "key3": "ibu",
   };
   Map<String, dynamic> bottomNavigation = {
-    "function1": {"icon": "home", "title": "Home"},
-    "function2": {"icon": "filter", "title": "Filtrar"},
-    "function3": {"icon": "list", "title": "Lista"},
+    "function1": {"icon": "home", "title": "Home", "route": "/"},
+    "function3": {"icon": "list", "title": "Lista", "route": "/list"},
   };
 
   Get.put(ImageController());
