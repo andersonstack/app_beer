@@ -49,12 +49,12 @@ class HomeView extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
-            BtnView(
-              title: "Visualizar cervejas",
-              // ignore: avoid_print
-              onPress: () => Get.toNamed('/list'),
-              icon: "null",
-            ),
+            // BtnView(
+            //   title: "Visualizar cervejas",
+            //   // ignore: avoid_print
+            //   onPress: () => Get.toNamed('/list'),
+            //   icon: "null",
+            // ),
           ],
         ),
       ),
