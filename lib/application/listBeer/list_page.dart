@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_beer/controller/infor_controller.dart';
 
-class ListBeer extends GetView<InforController> {
-  const ListBeer({super.key});
+class ListPage extends GetView<InforController> {
+  const ListPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,10 +5,10 @@ import 'package:app_beer/services/beer_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Beer extends StatelessWidget {
+class BeerPage extends StatelessWidget {
   final String id;
 
-  const Beer({super.key, required this.id});
+  const BeerPage({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {

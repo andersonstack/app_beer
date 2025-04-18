@@ -39,13 +39,13 @@ class App extends StatelessWidget {
         darkTheme: Style.darkTheme(screenHeight, screenWidth),
         themeMode: Get.find<ThemeController>().currentTheme,
         getPages: [
-          GetPage(name: '/', page: () => HomeView()),
-          GetPage(name: '/list', page: () => ListBeer()),
+          GetPage(name: '/', page: () => HomePage()),
+          GetPage(name: '/list', page: () => ListPage()),
           GetPage(
             name: '/beer/:id',
             page: () {
               final String id = Get.parameters['id']!;
-              return Beer(id: id);
+              return BeerPage(id: id);
             },
           ),
         ],
