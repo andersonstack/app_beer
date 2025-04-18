@@ -13,9 +13,9 @@ class ListPage extends GetView<InforController> {
     var scrollController = ScrollController();
 
     scrollController.addListener(() {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.position.pixels) {
-        print("Cheguei ao fim");
+      if (scrollController.position.pixels >=
+          scrollController.position.maxScrollExtent - 50) {
+        beerController.loadBeers();
       }
     });
 
@@ -40,28 +40,42 @@ class ListPage extends GetView<InforController> {
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              controller: scrollController,
-              itemCount: beerController.beers.length,
-              itemBuilder: (context, index) {
-                final cerveja = beerController.beers[index];
-                return Card(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  child: ListTile(
-                    title: Text(cerveja["name"]),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap:
-                        () => Get.toNamed(
-                          "/beer/${cerveja["id"]}",
-                          arguments: cerveja,
-                        ),
-                  ),
-                );
-              },
+          Obx(
+            () => Expanded(
+              child: ListView.builder(
+                controller: scrollController,
+                itemCount: beerController.beers.length + 1,
+                itemBuilder: (context, index) {
+                  if (index < beerController.beers.length) {
+                    final cerveja = beerController.beers[index];
+                    return Card(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
+                      child: ListTile(
+                        title: Text(cerveja["name"]),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        onTap:
+                            () => Get.toNamed(
+                              "/beer/${cerveja["id"]}",
+                              arguments: cerveja,
+                            ),
+                      ),
+                    );
+                  } else {
+                    // Loading no fim da lista
+                    return Obx(() {
+                      return beerController.isLoading.value
+                          ? Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Center(child: CircularProgressIndicator()),
+                          )
+                          : const SizedBox.shrink();
+                    });
+                  }
+                },
+              ),
             ),
           ),
         ],
