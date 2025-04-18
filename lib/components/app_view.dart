@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 // Classes
 import 'package:app_beer/components/home_component.dart';
-import 'list_component.dart';
+import '../listBeer/list_beer_view.dart';
 import '../style/style.dart';
 
 class AppView extends StatelessWidget {

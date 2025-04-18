@@ -1,5 +1,5 @@
 import 'package:app_beer/components/beer_component.dart';
-import 'package:app_beer/components/list_component.dart';
+import 'package:app_beer/listBeer/list_beer_view.dart';
 import 'package:app_beer/controller/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
