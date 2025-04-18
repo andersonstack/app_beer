@@ -1,6 +1,6 @@
 import 'package:app_beer/controller/app_request.dart';
 import 'package:app_beer/controller/theme_controller.dart';
-import 'package:app_beer/listBeer/scroll_controller.dart';
+// import 'package:app_beer/listBeer/scroll_controller.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'components/app_view.dart';
@@ -8,7 +8,7 @@ import './controller/app_controller.dart';
 
 void main() async {
   Get.put(ThemeController());
-  Get.put(ControllerScroll());
+  // Get.put(ControllerScroll());
   Get.put(AppRequest());
   final api = Get.find<AppRequest>();
 
