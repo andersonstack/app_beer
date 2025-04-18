@@ -4,7 +4,7 @@ import "package:flutter/material.dart";
 
 import 'package:app_beer/services/beer_request.dart';
 import 'package:app_beer/controller/theme_controller.dart';
-import 'package:app_beer/application/listBeer/beer_view.dart';
+import 'package:app_beer/application/listBeer/beer_page.dart';
 import 'package:app_beer/application/listBeer/list_page.dart';
 import 'package:app_beer/application/listBeer/home_page.dart';
 import 'package:app_beer/style/style.dart';

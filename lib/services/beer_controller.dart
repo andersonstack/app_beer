@@ -16,6 +16,7 @@ class BeerController extends GetxController {
       var result = await api.getListBeers();
       beers.assignAll(result);
     } catch (e) {
+      // ignore: avoid_print
       print("Erro ao carregar cervejas: $e");
     }
   }
