@@ -4,16 +4,15 @@ import 'package:app_beer/controller/theme_controller.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'components/app_view.dart';
-import 'controller/image_controller.dart';
 import './controller/app_controller.dart';
 
 void main() async {
+  Get.put(ThemeController());
+  Get.put(MyListScroll());
   Get.put(AppRequest());
   final api = Get.find<AppRequest>();
-  Get.put(MyListScroll());
 
   List<Map<String, dynamic>> cervejas = await api.getListBeers();
-
   Map<String, dynamic> categorias = {
     "key0": "id",
     "key1": "name",
@@ -25,8 +24,6 @@ void main() async {
     "function3": {"icon": "list", "title": "Lista", "route": "/list"},
   };
 
-  Get.put(ImageController());
-  Get.put(ThemeController());
   Get.put(
     AppController(
       cervejas: cervejas,
