@@ -1,3 +1,4 @@
+import 'package:app_beer/components/list_component.dart';
 import 'package:app_beer/controller/app_request.dart';
 import 'package:app_beer/controller/theme_controller.dart';
 import "package:flutter/material.dart";
@@ -9,6 +10,7 @@ import './controller/app_controller.dart';
 void main() async {
   Get.put(AppRequest());
   final api = Get.find<AppRequest>();
+  Get.put(MyListScroll());
 
   List<Map<String, dynamic>> cervejas = await api.getListBeers();
 

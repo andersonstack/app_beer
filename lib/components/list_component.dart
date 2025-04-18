@@ -3,12 +3,42 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_beer/controller/app_controller.dart';
 
+class MyListScroll extends GetxController {
+  final scrollController = ScrollController();
+
+  void _onScroll() {
+    if (scrollController.position.atEdge) {
+      bool isBottom =
+          scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent;
+      if (isBottom) {
+        print("🚨 Chegamos ao fim da lista!");
+        // Chame aqui o que quiser, como carregar mais itens
+      }
+    }
+  }
+
+  // Inicia o controlador
+  @override
+  void onInit() {
+    super.onInit();
+    scrollController.addListener(_onScroll);
+  }
+
+  // Encerra o controlador
+  @override
+  void onClose() {
+    scrollController.dispose();
+    super.onClose();
+  }
+}
+
 class ListBeer extends StatelessWidget {
   const ListBeer({super.key});
-
   @override
   Widget build(BuildContext context) {
     final AppController appController = Get.find();
+    final controllerScroll = Get.find<MyListScroll>();
 
     return Scaffold(
       appBar: AppBar(
@@ -33,6 +63,7 @@ class ListBeer extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
+              controller: controllerScroll.scrollController,
               itemCount: appController.cervejas.length,
               itemBuilder: (context, index) {
                 final cerveja = appController.cervejas[index];
