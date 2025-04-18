@@ -1,6 +1,5 @@
 import 'package:app_beer/components/navigationbar.dart';
 import 'package:app_beer/services/beer_controller.dart';
-// import 'package:app_beer/listBeer/scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_beer/controller/infor_controller.dart';
@@ -11,6 +10,14 @@ class ListPage extends GetView<InforController> {
   @override
   Widget build(BuildContext context) {
     final BeerController beerController = Get.find();
+    var scrollController = ScrollController();
+
+    scrollController.addListener(() {
+      if (scrollController.position.maxScrollExtent ==
+          scrollController.position.pixels) {
+        print("Cheguei ao fim");
+      }
+    });
 
     return Scaffold(
       appBar: AppBar(
@@ -35,6 +42,7 @@ class ListPage extends GetView<InforController> {
           ),
           Expanded(
             child: ListView.builder(
+              controller: scrollController,
               itemCount: beerController.beers.length,
               itemBuilder: (context, index) {
                 final cerveja = beerController.beers[index];
