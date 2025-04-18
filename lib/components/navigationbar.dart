@@ -1,19 +1,17 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_beer/controller/app_controller.dart';
-import 'package:app_beer/interface/icons_interface.dart';
-import 'package:app_beer/controller/navigationb_controller.dart';
+import 'package:app_beer/controller/infor_controller.dart';
+import 'package:app_beer/interface/icons.dart';
+import 'package:app_beer/controller/navigationbar_controller.dart';
 
 class MyBottomNavigation extends StatelessWidget {
   const MyBottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final MyBottomNavigationController btnCurrent = Get.put(
-      MyBottomNavigationController(),
-    );
-    final AppController appController = Get.find();
+    final NavigationController btnCurrent = Get.put(NavigationController());
+    final InforController appController = Get.find();
 
     return Obx(
       () => BottomNavigationBar(

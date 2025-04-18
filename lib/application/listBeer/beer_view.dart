@@ -1,6 +1,7 @@
-import 'package:app_beer/components/button_component.dart';
-import 'package:app_beer/components/navigationbar_component.dart';
-import 'package:app_beer/controller/app_controller.dart';
+import 'package:app_beer/components/button.dart';
+import 'package:app_beer/components/navigationbar.dart';
+import 'package:app_beer/controller/infor_controller.dart';
+import 'package:app_beer/services/beer_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,11 +12,12 @@ class Beer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppController controller = Get.find();
-    final int index = controller.cervejas.indexWhere(
+    final BeerController controller = Get.find();
+    final InforController infor = Get.find();
+    final int index = controller.beers.indexWhere(
       (cerveja) => cerveja["id"].toString() == id,
     );
-    final cervejas = controller.cervejas[index];
+    final cervejas = controller.beers[index];
 
     return Scaffold(
       appBar: AppBar(title: Text("")),
@@ -28,7 +30,7 @@ class Beer extends StatelessWidget {
               width: double.infinity,
               child: DataTable(
                 columns:
-                    controller.categorias.values.map((chave) {
+                    infor.categorias.values.map((chave) {
                       return DataColumn(
                         label: Text(
                           "${chave.toUpperCase()}",
@@ -39,7 +41,7 @@ class Beer extends StatelessWidget {
                 rows: [
                   DataRow(
                     cells:
-                        controller.categorias.values.map((chave) {
+                        infor.categorias.values.map((chave) {
                           return DataCell(
                             Text(
                               "${cervejas[chave]}",

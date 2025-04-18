@@ -1,34 +1,55 @@
-import 'package:app_beer/controller/app_request.dart';
-import 'package:app_beer/controller/theme_controller.dart';
-import "package:flutter/material.dart";
+import 'package:app_beer/controller/infor_controller.dart';
 import 'package:get/get.dart';
-import 'components/app_view.dart';
-import './controller/app_controller.dart';
+import "package:flutter/material.dart";
 
-void main() async {
-  Get.put(ThemeController());
-  Get.put(AppRequest());
-  final api = Get.find<AppRequest>();
+import 'package:app_beer/services/beer_request.dart';
+import 'package:app_beer/controller/theme_controller.dart';
+import 'package:app_beer/application/listBeer/beer_view.dart';
+import 'package:app_beer/application/listBeer/list_page.dart';
+import 'package:app_beer/application/listBeer/home_page.dart';
+import 'package:app_beer/style/style.dart';
+import 'package:app_beer/services/beer_controller.dart';
+import 'package:app_beer/utils/maps.dart';
 
-  List<Map<String, dynamic>> cervejas = await api.getListBeers();
-  Map<String, dynamic> categorias = {
-    "key0": "id",
-    "key1": "name",
-    "key2": "style",
-    "key3": "ibu",
-  };
-  Map<String, dynamic> bottomNavigation = {
-    "function1": {"icon": "home", "title": "Home", "route": "/"},
-    "function3": {"icon": "list", "title": "Lista", "route": "/list"},
-  };
+void main() {
+  runApp(App());
+}
 
-  Get.put(
-    AppController(
-      cervejas: cervejas,
-      categorias: categorias,
-      bottomNavigation: bottomNavigation,
-    ),
-  );
+// ignore: use_key_in_widget_constructors
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
-  runApp(const AppView());
+    Get.put(
+      InforController(
+        categorias: categorias,
+        bottomNavigation: bottomNavigation,
+      ),
+    );
+    Get.put(ThemeController());
+    Get.put(AppRequest());
+    Get.put(BeerController());
+
+    return Obx(
+      () => GetMaterialApp(
+        initialRoute: '/',
+        theme: Style.themeLight(screenHeight, screenWidth),
+        darkTheme: Style.darkTheme(screenHeight, screenWidth),
+        themeMode: Get.find<ThemeController>().currentTheme,
+        getPages: [
+          GetPage(name: '/', page: () => HomeView()),
+          GetPage(name: '/list', page: () => ListBeer()),
+          GetPage(
+            name: '/beer/:id',
+            page: () {
+              final String id = Get.parameters['id']!;
+              return Beer(id: id);
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class MyBottomNavigationController extends GetxController {
+class NavigationController extends GetxController {
   final botaoSelecionado = 0.obs;
   final List<String> routes = ['..', '/list'];
 

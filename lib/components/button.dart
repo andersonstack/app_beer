@@ -1,7 +1,7 @@
 import 'package:app_beer/style/btn_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app_beer/interface/icons_interface.dart';
+import 'package:app_beer/interface/icons.dart';
 
 class BtnController extends GetxController {
   static BtnController get to => Get.find();
